@@ -12,9 +12,18 @@ const InputField: React.FunctionComponent<Props> = ({
   setTodo,
   handleAdd,
 }) => {
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
   return (
-    <form className="input" onSubmit={handleAdd}>
+    <form
+      className="input"
+      onSubmit={(e) => {
+        handleAdd(e);
+        inputRef.current?.blur();
+      }}
+    >
       <input
+        ref={inputRef}
         type="input"
         placeholder="enter a task"
         className="input__box"

@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import InputField from "./components/InputField";
 import { Todo } from "./components/model";
+import TodoList from "./components/TodoList";
 
 const App: React.FunctionComponent = () => {
   const [todo, setTodo] = React.useState<string>("");
@@ -21,6 +22,7 @@ const App: React.FunctionComponent = () => {
     <div className="App">
       <span className="heading">Lina's List ✍️</span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };
