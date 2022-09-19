@@ -4,7 +4,6 @@ import { FiEdit } from "react-icons/fi";
 import { AiFillDelete } from "react-icons/ai";
 import { BsCheckLg } from "react-icons/bs";
 import "./styles.css";
-import TodoList from "./TodoList";
 
 type Props = {
   todo: Todo;
@@ -46,7 +45,6 @@ const SingleTodo = ({ todo, todos, setTodos }: Props) => {
     <form className="todos_single" onSubmit={(e) => handleEdit(e, todo.id)}>
       {edit ? (
         <input
-          ref={inputRef}
           value={editTodo}
           onChange={(e) => setEditTodo(e.target.value)}
           className="todos_single_text"
